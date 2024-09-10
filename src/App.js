@@ -1,14 +1,13 @@
 // src/App.jsx
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
-import AboutSection from './pages/AboutSection'; // Import the AboutSection component
-import HistorySection from './pages/HistorySecion';
+import AboutSection from './pages/AboutSection';
+import HistorySection from './pages/HistorySection';
+import RepositoriesSection from './pages/RepositoriesSection'; // For "Chapters"
+import SignificanceSection from './pages/SignificanceSection'; // For "Features"
 import { LanguageProvider } from './context/LanguageContext';
-import RepositoriesSection from './pages/RepositoriesSection';
-import SignificanceSection from './pages/SignificanceSection';
 
 function App() {
   return (
@@ -21,13 +20,14 @@ function App() {
             element={
               <div>
                 <HeroSection />
-                <AboutSection />
-                <HistorySection /> {/* Include History Section here */}
-                <RepositoriesSection/>
-                <SignificanceSection/>
+                
               </div>
             }
           />
+          <Route path="/about" element={<AboutSection />} />
+          <Route path="/history" element={<HistorySection />} />
+          <Route path="/chapters" element={<RepositoriesSection />} /> {/* Chapters route */}
+          <Route path="/features" element={<SignificanceSection />} /> {/* Features route */}
           {/* Add other routes here as needed */}
         </Routes>
       </LanguageProvider>
