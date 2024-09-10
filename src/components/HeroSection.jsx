@@ -2,12 +2,14 @@ import React from 'react';
 import { useLanguage } from '../context/LanguageContext'; // Ensure the path is correct
 import { motion } from 'framer-motion'; // Import motion from framer-motion
 
+
 const HeroSection = () => {
   const { language } = useLanguage();
   const isEnglish = language === 'English'; // Adjust according to your language codes
 
   return (
-    <section className="relative w-full h-screen flex flex-col md:flex-row bg-cover bg-center" style={{ backgroundImage: 'url(/images/hero-bg.jpg)' }}>
+
+        <section className="relative w-full h-screen flex flex-col md:flex-row bg-cover bg-center" style={{ backgroundImage: 'url(/images/hero-bg.jpg)' }}>
       {/* Background Overlay with Gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-60"></div>
 

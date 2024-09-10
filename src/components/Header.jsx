@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link } from 'react-router-dom';
 import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../context/LanguageContext'; // Ensure the path is correct
 
 const Header = () => {
   const { language, toggleLanguage } = useLanguage();
@@ -11,18 +11,18 @@ const Header = () => {
   const handleToggle = () => setIsOpen(!isOpen);
   const handleDropdownToggle = () => setIsDropdownOpen(!isDropdownOpen);
   const handleLanguageChange = (lang) => {
-    toggleLanguage();
+    toggleLanguage(lang);
     setIsDropdownOpen(false);
+    setIsOpen(false);
   };
 
-  // Define text for different buttons based on language
   const title = language === 'Tamil' ? 'திருக்குறள்' : 'Thirukkural';
   const homeText = language === 'Tamil' ? 'முகப்பு' : 'Home';
   const aboutText = language === 'Tamil' ? 'பற்றி' : 'About';
   const historyText = language === 'Tamil' ? 'வரலாறு' : 'History';
   const chaptersText = language === 'Tamil' ? 'அத்தியாயங்கள்' : 'Chapters';
-  const featuresText = language === 'Tamil' ? 'அம்சங்கள்' : 'Features';
-  const contactText = language === 'Tamil' ? 'தொடர்பு கொள்ள' : 'Contact';
+  const featuresText = language === 'Tamil' ? 'சாதனங்கள்' : 'Features';
+  const contactText = language === 'Tamil' ? 'தொடர்பு' : 'Contact';
 
   return (
     <header className="bg-[#cce7ff] text-black shadow-md">
@@ -85,6 +85,33 @@ const Header = () => {
           <Link to="/chapters" className="block px-4 py-2 font-bold hover:bg-[#b3d9ff]">{chaptersText}</Link>
           <Link to="/features" className="block px-4 py-2 font-bold hover:bg-[#b3d9ff]">{featuresText}</Link>
           <Link to="/contact" className="block px-4 py-2 font-bold hover:bg-[#b3d9ff]">{contactText}</Link>
+
+          {/* Language Dropdown for Mobile */}
+          <div className="relative mt-2">
+            <button
+              className="bg-[#cce7ff] text-black px-4 py-2 rounded-lg border border-black flex items-center w-full justify-between"
+              onClick={handleDropdownToggle}
+            >
+              {language === 'Tamil' ? 'தமிழ்' : 'English'}
+              <FaChevronDown className="ml-2" />
+            </button>
+            {isDropdownOpen && (
+              <div className="absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg w-full z-50">
+                <button
+                  onClick={() => handleLanguageChange('English')}
+                  className="block px-4 py-2 hover:bg-gray-200 w-full text-left"
+                >
+                  English
+                </button>
+                <button
+                  onClick={() => handleLanguageChange('Tamil')}
+                  className="block px-4 py-2 hover:bg-gray-200 w-full text-left"
+                >
+                  Tamil
+                </button>
+              </div>
+            )}
+          </div>
         </nav>
       )}
     </header>
