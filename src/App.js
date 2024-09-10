@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.jsx
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import HeroSection from './components/HeroSection';
+import AboutSection from './pages/AboutSection'; // Import the AboutSection component
+import HistorySection from './pages/HistorySecion';
+import { LanguageProvider } from './context/LanguageContext';
+import RepositoriesSection from './pages/RepositoriesSection';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <LanguageProvider>
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div>
+                <HeroSection />
+                <AboutSection />
+                <HistorySection /> {/* Include History Section here */}
+                <RepositoriesSection/>
+              </div>
+            }
+          />
+          {/* Add other routes here as needed */}
+        </Routes>
+      </LanguageProvider>
+    </Router>
   );
 }
 
