@@ -59,45 +59,53 @@ const SignificanceSection = () => {
           <div className="flex-1">
             {/* Interactive Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105">
-                <h3 className="text-2xl font-semibold mb-4 text-gray-800">
-                  {language === 'Tamil' ? 'தத்துவத்தியல்' : 'Philosophical Insights'}
-                </h3>
-                <p className="text-gray-600">
-                  {language === 'Tamil'
-                    ? 'திருக்குறளில் தத்துவத்தியல் மற்றும் நீதி பற்றி ஆழமான கருத்துகள் உள்ளன. இது உலக சமுதாயத்தின் தத்துவத்தை புரிந்து கொள்ள உதவுகிறது.'
-                    : 'The Thirukkural contains deep insights into philosophy and ethics. It aids in understanding the philosophical dimensions of the world society.'}
-                </p>
+              <div className="card-animation bg-white p-6 rounded-lg shadow-lg">
+                <div className="card-animation-content">
+                  <h3 className="text-2xl font-semibold mb-4 text-gray-800">
+                    {language === 'Tamil' ? 'தத்துவத்தியல்' : 'Philosophical Insights'}
+                  </h3>
+                  <p className="text-gray-600">
+                    {language === 'Tamil'
+                      ? 'திருக்குறளில் தத்துவத்தியல் மற்றும் நீதி பற்றி ஆழமான கருத்துகள் உள்ளன. இது உலக சமுதாயத்தின் தத்துவத்தை புரிந்து கொள்ள உதவுகிறது.'
+                      : 'The Thirukkural contains deep insights into philosophy and ethics. It aids in understanding the philosophical dimensions of the world society.'}
+                  </p>
+                </div>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105">
-                <h3 className="text-2xl font-semibold mb-4 text-gray-800">
-                  {language === 'Tamil' ? 'அரசியல் அறிவு' : 'Political Wisdom'}
-                </h3>
-                <p className="text-gray-600">
-                  {language === 'Tamil'
-                    ? 'திருக்குறளின் அரசியல் அறிவு, கல்வி மற்றும் சமூக நீதியை பற்றிய உள்ளடக்கம், சமூக வரலாற்றை புரிந்து கொள்ள உதவுகிறது.'
-                    : 'The political wisdom in Thirukkural, including content on governance, education, and social justice, helps in understanding societal history.'}
-                </p>
+              <div className="card-animation bg-white p-6 rounded-lg shadow-lg">
+                <div className="card-animation-content">
+                  <h3 className="text-2xl font-semibold mb-4 text-gray-800">
+                    {language === 'Tamil' ? 'அரசியல் அறிவு' : 'Political Wisdom'}
+                  </h3>
+                  <p className="text-gray-600">
+                    {language === 'Tamil'
+                      ? 'திருக்குறளின் அரசியல் அறிவு, கல்வி மற்றும் சமூக நீதியை பற்றிய உள்ளடக்கம், சமூக வரலாற்றை புரிந்து கொள்ள உதவுகிறது.'
+                      : 'The political wisdom in Thirukkural, including content on governance, education, and social justice, helps in understanding societal history.'}
+                  </p>
+                </div>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105">
-                <h3 className="text-2xl font-semibold mb-4 text-gray-800">
-                  {language === 'Tamil' ? 'சமூகவியல்' : 'Sociological Aspects'}
-                </h3>
-                <p className="text-gray-600">
-                  {language === 'Tamil'
-                    ? 'திருக்குறளின் சமூகவியல் சார்ந்த கருத்துகள், மனித உறவுகளை மற்றும் சமூக அமைப்புகளை விவரிக்கிறது. இது சமூக நீதிக்கு வழிகாட்டுகிறது.'
-                    : 'The sociological aspects of Thirukkural describe human relationships and social structures. It guides towards social justice.'}
-                </p>
+              <div className="card-animation bg-white p-6 rounded-lg shadow-lg">
+                <div className="card-animation-content">
+                  <h3 className="text-2xl font-semibold mb-4 text-gray-800">
+                    {language === 'Tamil' ? 'சமூகவியல்' : 'Sociological Aspects'}
+                  </h3>
+                  <p className="text-gray-600">
+                    {language === 'Tamil'
+                      ? 'திருக்குறளின் சமூகவியல் சார்ந்த கருத்துகள், மனித உறவுகளை மற்றும் சமூக அமைப்புகளை விவரிக்கிறது. இது சமூக நீதிக்கு வழிகாட்டுகிறது.'
+                      : 'The sociological aspects of Thirukkural describe human relationships and social structures. It guides towards social justice.'}
+                  </p>
+                </div>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105">
-                <h3 className="text-2xl font-semibold mb-4 text-gray-800">
-                  {language === 'Tamil' ? 'உலகநிலை' : 'Global Impact'}
-                </h3>
-                <p className="text-gray-600">
-                  {language === 'Tamil'
-                    ? 'திருக்குறளின் உலகளாவிய தாக்கம், முறைவியல் மற்றும் சமுதாய அமைப்புகள் குறித்து அவற்றின் பங்களிப்புகளை அலசுகிறது.'
-                    : 'The global impact of Thirukkural examines its contributions to ethics and societal structures worldwide.'}
-                </p>
+              <div className="card-animation bg-white p-6 rounded-lg shadow-lg">
+                <div className="card-animation-content">
+                  <h3 className="text-2xl font-semibold mb-4 text-gray-800">
+                    {language === 'Tamil' ? 'உலகநிலை' : 'Global Impact'}
+                  </h3>
+                  <p className="text-gray-600">
+                    {language === 'Tamil'
+                      ? 'திருக்குறளின் உலகளாவிய தாக்கம், முறைவியல் மற்றும் சமுதாய அமைப்புகள் குறித்து அவற்றின் பங்களிப்புகளை அலசுகிறது.'
+                      : 'The global impact of Thirukkural examines its contributions to ethics and societal structures worldwide.'}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
