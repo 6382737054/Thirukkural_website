@@ -8,6 +8,7 @@ import AboutSection from './pages/AboutSection'; // Import the AboutSection comp
 import HistorySection from './pages/HistorySecion';
 import { LanguageProvider } from './context/LanguageContext';
 import RepositoriesSection from './pages/RepositoriesSection';
+import SignificanceSection from './pages/SignificanceSection';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
                 <AboutSection />
                 <HistorySection /> {/* Include History Section here */}
                 <RepositoriesSection/>
+                <SignificanceSection/>
               </div>
             }
           />

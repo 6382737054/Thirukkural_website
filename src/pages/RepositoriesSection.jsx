@@ -64,37 +64,37 @@ const RepositoriesSection = () => {
   const repositories = repositoryData[language] || repositoryData.English;
 
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-50">
       {/* Introduction */}
-      <section id="repositories-intro" className="py-12 bg-[#e8f0f2] text-center">
+      <section id="repositories-intro" className="py-16 bg-gradient-to-r from-teal-100 via-teal-200 to-teal-300 text-center">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-extrabold mb-4 text-gray-900">
+          <h2 className="text-5xl font-extrabold mb-6 text-gray-900 tracking-tight transition-transform transform hover:scale-105">
             {language === 'Tamil' ? 'திருக்குறள் பதிவுகள் தமிழ்நாட்டில்' : 'Thirukkural Repositories in Tamil Nadu'}
           </h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
             {language === 'Tamil'
-              ? 'தமிழ்நாட்டில் உள்ள திருக்குறள் தொடர்பான முக்கியமான பதிவுகளை எளிதில் அணுகுங்கள். இவை ஆராய்ச்சி மற்றும் பாதுகாப்புக்கு மிகவும் முக்கியமானவை. இந்த பதிவுகள் திருக்குறளைப் பற்றிய அனைத்து தகவல்களையும் ஒரே இடத்தில் வழங்குகின்றன.'
+              ? 'தமிழ்நாட்டில் உள்ள திருக்குறள் தொடர்பான முக்கியமான பதிவுகளை எளிதாக அணுகுங்கள். இவை ஆராய்ச்சி மற்றும் பாதுகாப்புக்கு மிகவும் முக்கியமானவை. இந்த பதிவுகள் திருக்குறளைப் பற்றிய அனைத்து தகவல்களையும் ஒரே இடத்தில் வழங்குகின்றன.'
               : 'Explore notable repositories in Tamil Nadu that provide access to digitized versions, translations, and more about the Thirukkural. These resources are essential for research and preservation. They offer comprehensive access to all relevant information about the Thirukkural in one place.'}
           </p>
         </div>
       </section>
 
       {/* Repository Cards */}
-      <section id="repositories-list" className="py-12">
+      <section id="repositories-list" className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-6 text-gray-900 text-center">
+          <h2 className="text-4xl font-bold mb-10 text-gray-900 text-center">
             {language === 'Tamil' ? 'பொதுவான பதிவுகள்' : 'Notable Repositories'}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {repositories.map(repo => (
-              <div key={repo.name} className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src={repo.image} alt={repo.name} className="w-full h-40 object-cover" />
+              <div key={repo.name} className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl">
+                <img src={repo.image} alt={repo.name} className="w-full h-48 object-cover rounded-t-lg" />
                 <div className="p-6">
                   <h3 className="text-2xl font-semibold mb-2 text-gray-800">{repo.name}</h3>
                   <p className="text-gray-600 mb-4">{repo.description}</p>
                   <a
                     href={repo.url}
-                    className="text-blue-600 hover:underline"
+                    className="inline-block bg-teal-500 text-white py-2 px-4 rounded-full hover:bg-teal-600 transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

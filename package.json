@@ -13,6 +13,8 @@
     "react-router-dom": "^6.26.1",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.9.0",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -22,9 +24,7 @@
     "eject": "react-scripts eject",
     "homepage": "https://6382737054.github.io/Thirukkural_website",
     "predeploy": "npm run build",
-"deploy": "gh-pages -d build"
-
-
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
