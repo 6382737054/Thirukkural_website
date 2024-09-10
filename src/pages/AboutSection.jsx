@@ -74,7 +74,7 @@ const AboutSection = () => {
           {/* Right Side - Image */}
           <div className="w-full md:w-1/3 flex items-center justify-center mt-2 md:mt-0">
             <motion.img
-              src="/images/about.jpg"
+              src="/Images/about.jpg"
               alt={isEnglish ? 'A visual representation of our mission and vision' : 'எங்கள் பணி மற்றும் குறிக்கோளின் படம்விளக்கம்'}
               className="w-full h-auto rounded-lg shadow-lg -mb-1"
               initial={{ opacity: 0, scale: 0.95 }}

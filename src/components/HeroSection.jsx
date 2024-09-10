@@ -70,7 +70,7 @@ const HeroSection = () => {
         <div className="w-full md:w-1/2 flex flex-col items-center justify-center p-8 md:p-12 lg:p-20">
           {/* Image with Animation */}
           <motion.img
-            src="/images/thiruvalluvar.jpg"
+            src="/Images/thiruvalluvar.jpg"
             alt={
               isEnglish
                 ? 'Illustration of Thirukkural wisdom'
