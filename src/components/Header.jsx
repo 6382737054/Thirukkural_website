@@ -1,4 +1,3 @@
-// src/components/Header.jsx
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
@@ -16,7 +15,14 @@ const Header = () => {
     setIsDropdownOpen(false);
   };
 
+  // Define text for different buttons based on language
   const title = language === 'Tamil' ? 'திருக்குறள்' : 'Thirukkural';
+  const homeText = language === 'Tamil' ? 'முகப்பு' : 'Home';
+  const aboutText = language === 'Tamil' ? 'பற்றி' : 'About';
+  const historyText = language === 'Tamil' ? 'வரலாறு' : 'History';
+  const chaptersText = language === 'Tamil' ? 'அத்தியாயங்கள்' : 'Chapters';
+  const featuresText = language === 'Tamil' ? 'அம்சங்கள்' : 'Features';
+  const contactText = language === 'Tamil' ? 'தொடர்பு கொள்ள' : 'Contact';
 
   return (
     <header className="bg-[#cce7ff] text-black shadow-md">
@@ -27,12 +33,12 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          <Link to="/" className="font-bold hover:text-gray-700">Home</Link>
-          <Link to="/about" className="font-bold hover:text-gray-700">About</Link>
-          <Link to="/history" className="font-bold hover:text-gray-700">History</Link>
-          <Link to="/chapters" className="font-bold hover:text-gray-700">Chapters</Link> {/* Link to RepositoriesSection */}
-          <Link to="/features" className="font-bold hover:text-gray-700">Features</Link> {/* Link to SignificanceSection */}
-          <Link to="/contact" className="font-bold hover:text-gray-700">Contact</Link>
+          <Link to="/" className="font-bold hover:text-gray-700">{homeText}</Link>
+          <Link to="/about" className="font-bold hover:text-gray-700">{aboutText}</Link>
+          <Link to="/history" className="font-bold hover:text-gray-700">{historyText}</Link>
+          <Link to="/chapters" className="font-bold hover:text-gray-700">{chaptersText}</Link>
+          <Link to="/features" className="font-bold hover:text-gray-700">{featuresText}</Link>
+          <Link to="/contact" className="font-bold hover:text-gray-700">{contactText}</Link>
 
           {/* Language Dropdown */}
           <div className="relative">
@@ -73,12 +79,12 @@ const Header = () => {
       {/* Mobile Navigation */}
       {isOpen && (
         <nav className="md:hidden bg-[#cce7ff] text-black">
-          <Link to="/" className="block px-4 py-2 font-bold hover:bg-[#b3d9ff]">Home</Link>
-          <Link to="/about" className="block px-4 py-2 font-bold hover:bg-[#b3d9ff]">About</Link>
-          <Link to="/history" className="block px-4 py-2 font-bold hover:bg-[#b3d9ff]">History</Link>
-          <Link to="/chapters" className="block px-4 py-2 font-bold hover:bg-[#b3d9ff]">Chapters</Link> {/* Link to RepositoriesSection */}
-          <Link to="/features" className="block px-4 py-2 font-bold hover:bg-[#b3d9ff]">Features</Link> {/* Link to SignificanceSection */}
-          <Link to="/contact" className="block px-4 py-2 font-bold hover:bg-[#b3d9ff]">Contact</Link>
+          <Link to="/" className="block px-4 py-2 font-bold hover:bg-[#b3d9ff]">{homeText}</Link>
+          <Link to="/about" className="block px-4 py-2 font-bold hover:bg-[#b3d9ff]">{aboutText}</Link>
+          <Link to="/history" className="block px-4 py-2 font-bold hover:bg-[#b3d9ff]">{historyText}</Link>
+          <Link to="/chapters" className="block px-4 py-2 font-bold hover:bg-[#b3d9ff]">{chaptersText}</Link>
+          <Link to="/features" className="block px-4 py-2 font-bold hover:bg-[#b3d9ff]">{featuresText}</Link>
+          <Link to="/contact" className="block px-4 py-2 font-bold hover:bg-[#b3d9ff]">{contactText}</Link>
         </nav>
       )}
     </header>
