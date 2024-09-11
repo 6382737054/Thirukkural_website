@@ -27,7 +27,7 @@ const SignificanceSection = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-blue-100 to-blue-200 py-16">
+    <div className="bg-[#fbf9d2] py-16"> {/* Updated background color */}
       <div className="container mx-auto px-4">
         {/* Heading */}
         <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
