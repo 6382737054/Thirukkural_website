@@ -101,7 +101,7 @@ const AboutSection = () => {
               {/* Carousel Slides */}
               <div className="carousel-slide">
                 <motion.img
-                  src="/images/about.jpg" // Update with your actual image path
+                  src="/Images/about.jpg" // Update with your actual image path
                   alt="Carousel Image 1"
                   className="w-full h-[700px] object-cover rounded-xl shadow-2xl" // Set height to match the card
                   initial={{ opacity: 0, y: 50 }}
@@ -111,7 +111,7 @@ const AboutSection = () => {
               </div>
               <div className="carousel-slide">
                 <motion.img
-                  src="/images/about2.jpg" // Update with your actual image path
+                  src="/Images/about2.jpg" // Update with your actual image path
                   alt="Carousel Image 2"
                   className="w-full h-[700px] object-cover rounded-xl shadow-2xl" // Set height to match the card
                   initial={{ opacity: 0, y: 50 }}
@@ -121,7 +121,7 @@ const AboutSection = () => {
               </div>
               <div className="carousel-slide">
                 <motion.img
-                  src="/images/about3.jpg" // Update with your actual image path
+                  src="/Images/about3.jpg" // Update with your actual image path
                   alt="Carousel Image 3"
                   className="w-full h-[700px] object-cover rounded-xl shadow-2xl" // Set height to match the card
                   initial={{ opacity: 0, y: 50 }}
