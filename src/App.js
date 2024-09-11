@@ -5,8 +5,9 @@ import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import AboutSection from './pages/AboutSection';
 import HistorySection from './pages/HistorySection';
-import RepositoriesSection from './pages/RepositoriesSection'; // For "Chapters"
-import SignificanceSection from './pages/SignificanceSection'; // For "Features"
+import RepositoriesSection from './pages/RepositoriesSection'; // Chapters route
+import SignificanceSection from './pages/SignificanceSection'; // Features
+import ContactPage from './pages/ContactPage'; // Import the ContactPage component
 import { LanguageProvider } from './context/LanguageContext';
 
 function App() {
@@ -20,14 +21,14 @@ function App() {
             element={
               <div>
                 <HeroSection />
-                
               </div>
             }
           />
           <Route path="/about" element={<AboutSection />} />
           <Route path="/history" element={<HistorySection />} />
-          <Route path="/chapters" element={<RepositoriesSection />} /> {/* Chapters route */}
-          <Route path="/features" element={<SignificanceSection />} /> {/* Features route */}
+          <Route path="/chapters" element={<RepositoriesSection />} />
+          <Route path="/features" element={<SignificanceSection />} />
+          <Route path="/contact" element={<ContactPage />} /> {/* Contact Page route */}
           {/* Add other routes here as needed */}
         </Routes>
       </LanguageProvider>
