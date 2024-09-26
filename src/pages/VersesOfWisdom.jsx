@@ -47,10 +47,22 @@ const versesData = [
 ];
 
 const themesData = [
-  { name: 'Love', description: 'Verses focusing on love and relationships. Love is depicted as the foundation of all meaningful connections, promoting harmony and understanding.' },
-  { name: 'Ethics', description: 'Verses on morality and righteousness. This theme explores the significance of ethical conduct in personal and public life, emphasizing integrity and accountability.' },
-  { name: 'Governance', description: 'Verses related to leadership and governance. Effective leadership is portrayed as essential for societal progress, encouraging leaders to act with wisdom and justice.' },
-  { name: 'Knowledge', description: 'Verses emphasizing the importance of learning. Knowledge is likened to a nurturing soil, requiring continuous cultivation to yield wisdom and insight.' },
+  { 
+    name: { english: 'Love', tamil: 'காதல்' }, 
+    description: { english: 'Verses focusing on love and relationships. Love is depicted as the foundation of all meaningful connections, promoting harmony and understanding.', tamil: 'காதல் மற்றும் உறவுகளை மையமாகக் கொண்டு பாடல்கள். காதல், அனைத்து அர்த்தமுள்ள தொடர்புகளின் அடிப்படையாகக் காணப்படுகிறது, ஒற்றுமையும் புரிதலையும் ஊக்குவிக்கிறது.' }
+  },
+  { 
+    name: { english: 'Ethics', tamil: 'அறம்' }, 
+    description: { english: 'Verses on morality and righteousness. This theme explores the significance of ethical conduct in personal and public life, emphasizing integrity and accountability.', tamil: 'நெறி மற்றும் நீதியைப் பற்றிய பாடல்கள். இந்த தளம் தனிப்பட்ட மற்றும் பொதுத்தோற்றங்களில் நீதியின் முக்கியத்துவத்தை ஆராய்கிறது, சத்தியம் மற்றும் பொறுப்பேற்கையை வலியுறுத்துகிறது.' }
+  },
+  { 
+    name: { english: 'Governance', tamil: 'நடவடிக்கை' }, 
+    description: { english: 'Verses related to leadership and governance. Effective leadership is portrayed as essential for societal progress, encouraging leaders to act with wisdom and justice.', tamil: 'தொடர்பான பாட்டுகள். சமூக முன்னேற்றத்திற்கு முக்கியமாகக் காணப்படும் மாறுபாட்டிற்கு வழிகாட்டிகள் ஆற்றல் மற்றும் நீதியுடன் செயல்படச் சொல்லும்.' }
+  },
+  { 
+    name: { english: 'Knowledge', tamil: 'அறிவு' }, 
+    description: { english: 'Verses emphasizing the importance of learning. Knowledge is likened to a nurturing soil, requiring continuous cultivation to yield wisdom and insight.', tamil: 'கற்றலின் முக்கியத்துவத்தை வலியுறுத்தும் பாடல்கள். அறிவு, அறிவுத்திறனை வழங்குவதற்காகத் தொடர்ந்து பராமரிக்க வேண்டிய மண் போல இருக்கின்றது.' }
+  },
 ];
 
 const VersesOfWisdom = () => {
@@ -96,7 +108,7 @@ const VersesOfWisdom = () => {
           {language === 'Tamil' ? 'தேர்ந்தெடுக்கப்பட்ட பாடல்' : 'Selected Verse'}
         </h2>
         <h3 className="text-xl font-bold">{selectedVerse[language === 'Tamil' ? 'tamil' : 'translation']}</h3>
-        <p className="italic text-gray-600">{selectedVerse.translation}</p>
+        <p className="italic text-gray-600">{language === 'Tamil' ? selectedVerse.translation : selectedVerse.tamil}</p>
         <p className="mt-2">{selectedVerse.commentary}</p>
         <h4 className="mt-4 text-lg font-semibold">{language === 'Tamil' ? 'விளக்கம்' : 'Detailed Explanation'}</h4>
         <p className="mt-1">{selectedVerse.detailedExplanation}</p>
@@ -109,16 +121,10 @@ const VersesOfWisdom = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
         {themesData.map((theme, index) => (
           <div key={index} className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 bg-gradient-to-r from-yellow-100 to-orange-100">
-            <h3 className="text-xl font-bold">{theme.name}</h3>
-            <p>{theme.description}</p>
+            <h3 className="text-xl font-bold">{language === 'Tamil' ? theme.name.tamil : theme.name.english}</h3>
+            <p>{language === 'Tamil' ? theme.description.tamil : theme.description.english}</p>
           </div>
         ))}
-      </div>
-
-      {/* Closing Thoughts */}
-      <div className="text-center mt-8">
-        <h2 className="text-3xl font-semibold">{language === 'Tamil' ? 'அந் னுகூறும் நிகர்நிகரானது' : 'The Timeless Wisdom'}</h2>
-        <p className="mt-2">{language === 'Tamil' ? 'இந்த பாடல்கள் தலைமுறைகளை ஊக்குவிக்கின்றன.' : 'These verses continue to inspire and guide generations.'}</p>
       </div>
     </div>
   );
