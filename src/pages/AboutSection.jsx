@@ -1,15 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useLanguage } from '../context/LanguageContext'; // Ensure the path is correct
-import Slider from 'react-slick'; // Import react-slick for carousel
-import { PrevArrow, NextArrow } from './CustomArrows'; // Import custom arrows
-import '@fontsource/playfair-display'; // Ensure this package is installed
-import 'slick-carousel/slick/slick.css'; // Import slick-carousel styles
-import 'slick-carousel/slick/slick-theme.css'; // Import slick-carousel theme styles
+import { useLanguage } from '../context/LanguageContext';
+import Slider from 'react-slick';
+import { PrevArrow, NextArrow } from './CustomArrows';
+import '@fontsource/playfair-display';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import DynamicQuote from './DynamicQuote';
 
 const AboutSection = () => {
-  const { language } = useLanguage(); // Use the context to get the current language
+  const { language } = useLanguage();
 
   // Define content for both languages
   const content = {
@@ -54,7 +54,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="relative w-full py-20 bg-grey overflow-hidden">
+    <section className="relative w-full py-20 bg-gray-100 overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <svg className="absolute top-0 left-0 w-2/3 h-2/3 text-gray-200" viewBox="0 0 200 200" fill="none">
@@ -152,24 +152,18 @@ const AboutSection = () => {
 
           {/* Key Achievement Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {sectionContent.keyAchievements.map((achievement, index) => (
-  <motion.div
-    key={index}
-    className="relative p-8 bg-white rounded-xl shadow-xl hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105"
-    initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8, delay: index * 0.2 }}
-  >
-    {/* Ensure the text is always above the background gradient */}
-    <h4 className="text-xl font-semibold text-black-900 z-10 mb-4">{achievement.title}</h4>
-    <p className="text-black-800 z-10">{achievement.description}</p>
-
-    {/* Sliding color effect behind the text */}
-    <div className="absolute inset-0 bg-gradient-to-r from-lavender-100 to-peach-100 opacity-0 hover:opacity-100 transition-opacity duration-500 z-0"></div>
-
-
-  </motion.div>
-))}
+            {sectionContent.keyAchievements.map((achievement, index) => (
+              <motion.div
+                key={index}
+                className="relative p-8 bg-white rounded-xl shadow-xl hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+              >
+                <h4 className="text-xl font-bold text-gray-900 mb-2">{achievement.title}</h4>
+                <p className="text-gray-700">{achievement.description}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>

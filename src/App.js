@@ -9,6 +9,7 @@ import RepositoriesSection from './pages/RepositoriesSection'; // Chapters route
 import SignificanceSection from './pages/SignificanceSection'; // Features
 import ContactPage from './pages/ContactPage'; // Import the ContactPage component
 import { LanguageProvider } from './context/LanguageContext';
+import VersesOfWisdom from './pages/VersesOfWisdom';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             element={
               <div>
                 <HeroSection />
+                <VersesOfWisdom /> {/* VersesOfWisdom is rendered on the home page */}
               </div>
             }
           />
