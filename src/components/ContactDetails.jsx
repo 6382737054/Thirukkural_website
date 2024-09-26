@@ -23,22 +23,22 @@ const ContactDetails = () => {
   const t = texts[language];
 
   return (
-    <div className="w-full md:w-1/2 bg-white p-8 rounded-xl shadow-lg">
-      <h2 className="text-2xl font-semibold mb-6 text-gray-800">
+    <div className="flex flex-col items-center w-full md:w-1/2 bg-white p-6 rounded-lg shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105">
+      <h2 className="text-3xl font-semibold mb-4 text-gray-800 border-b-2 border-blue-500 pb-2 text-center">
         {t.getInTouch}
       </h2>
-      <div className="flex flex-col gap-6">
-        <div className="flex items-center text-gray-700 mb-4">
-          <FaPhoneAlt size={20} className="mr-4 text-blue-500" />
-          <span className="text-lg">{t.phone}</span>
+      <div className="flex flex-col gap-4 w-full">
+        <div className="flex items-center text-gray-700 transition-transform duration-200 ease-in-out transform hover:translate-x-1">
+          <FaPhoneAlt size={24} className="mr-3 text-blue-600" />
+          <span className="text-lg font-medium">{t.phone}</span>
         </div>
-        <div className="flex items-center text-gray-700 mb-4">
-          <FaEnvelope size={20} className="mr-4 text-blue-500" />
-          <span className="text-lg">{t.emailAddress}</span>
+        <div className="flex items-center text-gray-700 transition-transform duration-200 ease-in-out transform hover:translate-x-1">
+          <FaEnvelope size={24} className="mr-3 text-blue-600" />
+          <span className="text-lg font-medium">{t.emailAddress}</span>
         </div>
-        <div className="flex items-center text-gray-700">
-          <FaMapMarkerAlt size={20} className="mr-4 text-blue-500" />
-          <span className="text-lg">{t.address}</span>
+        <div className="flex items-center text-gray-700 transition-transform duration-200 ease-in-out transform hover:translate-x-1">
+          <FaMapMarkerAlt size={24} className="mr-3 text-blue-600" />
+          <span className="text-lg font-medium">{t.address}</span>
         </div>
       </div>
     </div>

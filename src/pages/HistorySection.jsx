@@ -14,7 +14,10 @@ const HistorySection = () => {
   };
 
   return (
-    <section id="history-section" className="py-20 px-6 md:px-12 bg-white">
+    <section
+      id="history-section"
+      className="py-20 px-6 md:px-12 bg-gradient-to-r from-blue-50 to-green-50" // Added gradient background
+    >
       <div className="container mx-auto relative z-10">
         <motion.h1
           className="text-4xl font-bold text-gray-900 text-center mb-16"
@@ -109,7 +112,7 @@ const HistorySection = () => {
                   <p className="text-lg text-gray-700 leading-relaxed mb-6">
                     {isEnglish
                       ? 'Inbam, or love, is the third section of Thirukkural. It explores the nature of love and relationships, highlighting the joys and challenges of romantic and familial bonds. This section reflects on the emotional and psychological aspects of love.'
-                      : 'இன்பம், அல்லது காதல், திருக்குறளின் மூன்றாவது பகுதியாகும். இது காதலின் மற்றும் உறவுகளின் இயல்புகளை ஆராய்கிறது, காதல் மற்றும் குடும்ப உறவுகளின் மகிழ்ச்சிகள் மற்றும் சவால்களை முன்னிறுத்துகிறது. இந்தப் பகுதி, காதலின் உளவியல் மற்றும் உளவியல் அம்சங்களை பிரதிபலிக்கிறது.'}
+                      : 'இன்பம், அல்லது காதல், திருக்குறளின் மூன்றாவது பகுதியாகும். இது காதலின் மற்றும் உறவுகளின் இயல்புகளை ஆராய்கிறது, காதல் மற்றும் குடும்ப உறவின் மகிழ்ச்சிகள் மற்றும் சவால்களை முன்னிறுத்துகிறது. இந்தப் பகுதி, காதலின் உளவியல் மற்றும் உளவியல் அம்சங்களை பிரதிபலிக்கிறது.'}
                   </p>
                   <p className="text-lg text-gray-700 leading-relaxed mb-6">
                     {isEnglish
@@ -125,34 +128,24 @@ const HistorySection = () => {
           <div className="w-full md:w-1/3 flex flex-col gap-8">
             <div className="bg-gray-100 p-8 rounded-xl shadow-lg">
               <h3 className="text-2xl font-semibold mb-4 text-gray-800">
-                {isEnglish ? 'Key Insights' : 'முக்கிய பார்வைகள்'}
+                {isEnglish ? 'Key Insights' : 'முக்கிய உண்மைகள்'}
               </h3>
-              <p className="text-lg text-gray-700 mb-4">
+              <p className="text-gray-700 leading-relaxed">
                 {isEnglish
-                  ? 'Explore key insights and notable quotes from each section of Thirukkural to deepen your understanding of these timeless teachings.'
-                  : 'திருக்குறளின் ஒவ்வொரு பகுதியில் உள்ள முக்கியமான நுண்ணறிவுகளை மற்றும் குறிப்பிடத்தக்க மேற்கோள்களைப் பரிசீலிக்கவும், இந்த முறைமையான கற்றல்களை மேலும் விளக்கமாக புரிந்துகொள்ளுங்கள்.'}
+                  ? 'Thirukkural presents a holistic view of life through the lenses of virtue, wealth, and love. Each section complements the others, creating a comprehensive guide to living a balanced and fulfilling life.'
+                  : 'திருக்குறள், நற்பண்புகள், செல்வம் மற்றும் காதல் ஆகியவற்றின் பார்வையில் வாழ்க்கையின் அனைத்துப் பாகங்களையும் வழங்குகிறது. ஒவ்வொரு பகுதியும் மற்றவை என்பதற்கேற்ப, சமநிலையற்ற மற்றும் முழுமையான வாழ்க்கைக்கு வழிகாட்டுகிறது.'}
               </p>
-              <ul className="list-disc pl-5 text-gray-700">
-                <li>{isEnglish ? 'Aram: "Virtue is the foundation of a good life."' : 'அறம்: "நல்ல வாழ்க்கையின் அடிப்படை நல்லொழுக்கம்."'}</li>
-                <li>{isEnglish ? 'Porul: "Wealth must be used wisely for the betterment of society."' : 'பொருள்: "செல்வத்தை சமூக மேம்பாட்டிற்காக புத்திசாலியாகப் பயன்படுத்தவேண்டும்."'}</li>
-                <li>{isEnglish ? 'Inbam: "Love enriches our lives and relationships."' : 'இன்பம்: "காதல் நமது வாழ்க்கையையும் உறவுகளையும் வளப்படுத்துகிறது."'}</li>
-              </ul>
             </div>
 
             <div className="bg-gray-100 p-8 rounded-xl shadow-lg">
               <h3 className="text-2xl font-semibold mb-4 text-gray-800">
-                {isEnglish ? 'Related Resources' : 'சம்பந்தப்பட்ட வளங்கள்'}
+                {isEnglish ? 'Impact on Society' : 'சமுதாயத்தின் மீதான தாக்கம்'}
               </h3>
-              <p className="text-lg text-gray-700 mb-4">
+              <p className="text-gray-700 leading-relaxed">
                 {isEnglish
-                  ? 'Discover additional resources to deepen your knowledge of Thirukkural. Explore books, articles, and videos related to these teachings.'
-                  : 'திருக்குறளைப் பற்றிய உங்கள் அறிவை மேம்படுத்த கூடுதல் வளங்களைப் கண்டறியவும். இந்தக் கற்றல்களைப் பற்றிய புத்தகங்கள், கட்டுரைகள், மற்றும் வீடியோக்களைப் ஆராயவும்.'}
+                  ? 'The teachings of Thirukkural have inspired countless individuals and leaders, emphasizing the importance of ethics and morality in personal and societal development.'
+                  : 'திருக்குறளின் கற்றல்களில் எண்ணற்ற நபர்களுக்கும் தலைவர்களுக்கும் ஊக்கம் அளிக்கிறது, தனிப்பட்ட மற்றும் சமூக வளர்ச்சியில் நீதிமுறை மற்றும் தர்மத்தின் முக்கியத்துவத்தை வலியுறுத்துகிறது.'}
               </p>
-              <ul className="list-disc pl-5 text-gray-700">
-                <li><a href="https://www.example.com" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Book: Understanding Thirukkural</a></li>
-                <li><a href="https://www.example.com" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Article: The Wisdom of Thirukkural</a></li>
-                <li><a href="https://www.example.com" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Video: Thirukkural Explained</a></li>
-              </ul>
             </div>
           </div>
         </div>
