@@ -101,18 +101,23 @@ const VersesOfWisdom = () => {
           </div>
         ))}
       </div>
-
-      {/* Selected Verse Details */}
-      <div className="bg-white p-6 rounded-lg shadow-md mb-8">
-        <h2 className="text-2xl font-semibold mb-2">
-          {language === 'Tamil' ? 'தேர்ந்தெடுக்கப்பட்ட பாடல்' : 'Selected Verse'}
-        </h2>
-        <h3 className="text-xl font-bold">{selectedVerse[language === 'Tamil' ? 'tamil' : 'translation']}</h3>
-        <p className="italic text-gray-600">{language === 'Tamil' ? selectedVerse.translation : selectedVerse.tamil}</p>
-        <p className="mt-2">{selectedVerse.commentary}</p>
-        <h4 className="mt-4 text-lg font-semibold">{language === 'Tamil' ? 'விளக்கம்' : 'Detailed Explanation'}</h4>
-        <p className="mt-1">{selectedVerse.detailedExplanation}</p>
-      </div>
+{/* Selected Verse Details */}
+<div className="bg-gradient-to-r from-blue-200 to-green-100 p-6 rounded-lg shadow-xl mb-8 transition-transform transform hover:scale-105">
+  <h2 className="text-3xl font-semibold mb-4 text-center text-black-700">
+    {language === 'Tamil' ? 'தேர்ந்தெடுக்கப்பட்ட பாடல்' : 'Selected Verse'}
+  </h2>
+  <h3 className="text-2xl font-bold text-center mb-2">
+    {selectedVerse[language === 'Tamil' ? 'tamil' : 'translation']}
+  </h3>
+  <p className="italic text-center text-gray-600 mb-4">{language === 'Tamil' ? selectedVerse.translation : selectedVerse.tamil}</p>
+  <div className="bg-white p-4 rounded-lg shadow-md">
+    <p className="mb-4">{selectedVerse.commentary}</p>
+    <h4 className="text-xl font-semibold mt-4 mb-2 text-indigo-600">
+      {language === 'Tamil' ? 'விளக்கம்' : 'Detailed Explanation'}
+    </h4>
+    <p className="text-gray-700">{selectedVerse.detailedExplanation}</p>
+  </div>
+</div>
 
       {/* Themes Section */}
       <h2 className="text-3xl font-semibold mb-4">
@@ -122,7 +127,7 @@ const VersesOfWisdom = () => {
         {themesData.map((theme, index) => (
           <div key={index} className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 bg-gradient-to-r from-yellow-100 to-orange-100">
             <h3 className="text-xl font-bold">{language === 'Tamil' ? theme.name.tamil : theme.name.english}</h3>
-            <p>{language === 'Tamil' ? theme.description.tamil : theme.description.english}</p>
+            <p className="mt-2 text-gray-700">{language === 'Tamil' ? theme.description.tamil : theme.description.english}</p>
           </div>
         ))}
       </div>
