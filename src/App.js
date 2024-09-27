@@ -9,6 +9,8 @@ import RepositoriesSection from './pages/RepositoriesSection'; // Chapters route
 import SignificanceSection from './pages/SignificanceSection'; // Features
 import ContactPage from './pages/ContactPage'; // Import the ContactPage component
 import { LanguageProvider } from './context/LanguageContext';
+import FlipBook from './pages/VersesOfWisdom';
+import VersesSection from './pages/VersesSection';
 
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
             element={
               <div>
                 <HeroSection />
+               <FlipBook/>
+               <VersesSection/>
                
               </div>
             }
