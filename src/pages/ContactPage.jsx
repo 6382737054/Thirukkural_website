@@ -21,7 +21,7 @@ const ContactPage = () => {
   const t = texts[language];
 
   return (
-    <section id="contact-page" className="py-20 px-6 md:px-12 bg-gray-100">
+    <section id="contact-page" className="py-28 px-6 md:px-12 bg-gray-100"> {/* Increased padding for spacing */}
       <div className="container mx-auto">
         <motion.h1
           className="text-4xl font-bold text-gray-900 text-center mb-12"

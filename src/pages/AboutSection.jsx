@@ -54,7 +54,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="relative w-full py-20 bg-gray-100 overflow-hidden">
+    <section className="relative w-full py-20 bg-gray-100 overflow-hidden pt-32"> {/* Added padding-top for static navbar */}
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <svg className="absolute top-0 left-0 w-2/3 h-2/3 text-gray-200" viewBox="0 0 200 200" fill="none">
@@ -160,8 +160,8 @@ const AboutSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
               >
-                <h4 className="text-xl font-bold text-gray-900 mb-2">{achievement.title}</h4>
-                <p className="text-gray-700">{achievement.description}</p>
+                <h4 className="text-xl font-semibold text-gray-800 mb-2">{achievement.title}</h4>
+                <p className="text-gray-600">{achievement.description}</p>
               </motion.div>
             ))}
           </div>

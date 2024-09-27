@@ -95,7 +95,7 @@ const facilityContent = {
       {
         title: 'சுயவிவர கண்காணிப்பு',
         description:
-          'தரவுகளைச் சுத்தமாக பராமரிக்கவும், எந்தவொரு பிரச்சனையும் முந்தைய நிலைமைகளை கண்டறிந்து தீர்க்கும் திறமையான கண்காணிப்பு அமைப்புகள்.',
+          'தரவைச் சுத்தமாக பராமரிக்கவும், எந்தவொரு பிரச்சனையும் முந்தைய நிலைமைகளை கண்டறிந்து தீர்க்கும் திறமையான கண்காணிப்பு அமைப்புகள்.',
       },
     ],
   },
@@ -145,7 +145,7 @@ const RepositoriesSection = () => {
       {/* Introduction */}
       <section
         id="repositories-intro"
-        className="py-16 bg-gradient-to-r from-teal-100 via-teal-0 to-teal-0 text-center"
+        className="py-16 pt-32 bg-gradient-to-r from-teal-100 via-teal-0 to-teal-0 text-center" // Add pt-32 here
       >
         <div className="container mx-auto px-4">
           <h2 className="text-5xl font-extrabold mb-6 text-gray-900 tracking-tight transition-transform transform hover:scale-105">
@@ -185,9 +185,9 @@ const RepositoriesSection = () => {
                     href={repo.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block bg-teal-500 text-white py-2 px-4 rounded-full hover:bg-teal-600 transition-colors"
+                    className="inline-block px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-500 transition"
                   >
-                    {language === 'Tamil' ? 'இணையதளத்திற்குச் செல்' : 'Visit Website'}
+                    {language === 'Tamil' ? 'மேலும் வாசிக்க' : 'Read More'}
                   </a>
                 </div>
               </div>
@@ -196,25 +196,20 @@ const RepositoriesSection = () => {
         </div>
       </section>
 
-      {/* Facilities Section */}
-      <section id="facilities-section" className="py-16 bg-gray-100">
+      {/* Facilities Information */}
+      <section id="facilities" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-10 text-gray-900 text-center">
             {facilities.heading}
           </h2>
-          <p className="text-lg text-gray-700 mb-8 text-center max-w-3xl mx-auto">
+          <p className="text-lg text-gray-700 mb-6 text-center">
             {facilities.description}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {facilities.facilities.map((facility) => (
-              <div
-                key={facility.title}
-                className="group bg-white p-6 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl"
-              >
-                <h3 className="text-2xl font-semibold mb-4 text-gray-900 group-hover:text-teal-500 transition-colors">
-                  {facility.title}
-                </h3>
-                <p className="text-gray-700 mb-4">{facility.description}</p>
+              <div key={facility.title} className="bg-white rounded-lg shadow-lg p-6">
+                <h3 className="text-2xl font-semibold mb-2 text-gray-800">{facility.title}</h3>
+                <p className="text-gray-600">{facility.description}</p>
               </div>
             ))}
           </div>

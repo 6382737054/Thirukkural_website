@@ -27,7 +27,7 @@ const SignificanceSection = () => {
   };
 
   return (
-    <div className="bg-[#e5e4cd] py-16"> {/* Updated background color */}
+    <div className="bg-[#e5e4cd] py-16 pt-32"> {/* Updated background color and added padding */}
       <div className="container mx-auto px-4">
         {/* Heading */}
         <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
@@ -40,7 +40,7 @@ const SignificanceSection = () => {
           <div className="flex-1">
             <p className="text-lg text-gray-800 mb-6">
               {language === 'Tamil'
-                ? 'திருக்குறள் தமிழ் இலக்கியத்தின் அடித்தளம் ஆகும். திருக்குறளில் காணப்படும் கருத்துகள், பயன்மிக்க அறிவு மற்றும் வாழ்வியல் தத்துவங்கள் பொதுமக்களுக்கு மிகுந்த பயனுள்ளவையாகும். இது அன்றைய சமூகத்தின் உள் மற்றும் வெளியுறவு கருத்துகளை வலுப்படுத்துகிறது.'
+                ? 'திருக்குறள் தமிழ் இலக்கியத்தின் அடித்தளம் ஆகும். திருக்குறளில் காணப்படும் கருத்துகள், பயன்மிக்க அறிவு மற்றும் வாழ்வியல் தத்துவங்கள் பொதுமக்களுக்கு மிகுந்த பயனுள்ளவையாகும். இது அன்றைய சமூகத்தின் உள் மற்றும் வெளிுறவு கருத்துகளை வலுப்படுத்துகிறது.'
                 : 'The Thirukkural is a cornerstone of Tamil literature. The concepts, practical wisdom, and philosophical insights contained in the Thirukkural provide significant value to the public. It strengthens both the internal and external reflections of society.'}
             </p>
             <p className="text-lg text-gray-800 mb-6">

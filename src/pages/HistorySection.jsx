@@ -5,7 +5,7 @@ import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 const HistorySection = () => {
   const { language } = useLanguage();
-  const isEnglish = language === 'English';
+  const isEnglish = language === 'English'; // Fixed the condition here
 
   const [expandedSection, setExpandedSection] = useState(null);
 
@@ -16,7 +16,7 @@ const HistorySection = () => {
   return (
     <section
       id="history-section"
-      className="py-20 px-6 md:px-12 bg-gradient-to-r from-blue-50 to-green-50" // Added gradient background
+      className="pt-32 py-20 px-6 md:px-12 bg-gradient-to-r from-blue-50 to-green-50" // Added padding-top
     >
       <div className="container mx-auto relative z-10">
         <motion.h1
@@ -132,19 +132,8 @@ const HistorySection = () => {
               </h3>
               <p className="text-gray-700 leading-relaxed">
                 {isEnglish
-                  ? 'Thirukkural presents a holistic view of life through the lenses of virtue, wealth, and love. Each section complements the others, creating a comprehensive guide to living a balanced and fulfilling life.'
-                  : 'திருக்குறள், நற்பண்புகள், செல்வம் மற்றும் காதல் ஆகியவற்றின் பார்வையில் வாழ்க்கையின் அனைத்துப் பாகங்களையும் வழங்குகிறது. ஒவ்வொரு பகுதியும் மற்றவை என்பதற்கேற்ப, சமநிலையற்ற மற்றும் முழுமையான வாழ்க்கைக்கு வழிகாட்டுகிறது.'}
-              </p>
-            </div>
-
-            <div className="bg-gray-100 p-8 rounded-xl shadow-lg">
-              <h3 className="text-2xl font-semibold mb-4 text-gray-800">
-                {isEnglish ? 'Impact on Society' : 'சமுதாயத்தின் மீதான தாக்கம்'}
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                {isEnglish
-                  ? 'The teachings of Thirukkural have inspired countless individuals and leaders, emphasizing the importance of ethics and morality in personal and societal development.'
-                  : 'திருக்குறளின் கற்றல்களில் எண்ணற்ற நபர்களுக்கும் தலைவர்களுக்கும் ஊக்கம் அளிக்கிறது, தனிப்பட்ட மற்றும் சமூக வளர்ச்சியில் நீதிமுறை மற்றும் தர்மத்தின் முக்கியத்துவத்தை வலியுறுத்துகிறது.'}
+                  ? 'Thirukkural presents a holistic view of life through the lenses of virtue, wealth, and love. Each section complements the others, creating a balanced approach to personal and societal development.'
+                  : 'திருக்குறள், நல்லொழுக்கம், செல்வம் மற்றும் காதலின் கண்ணோட்டத்தில் வாழ்க்கையின் முழுமையான கண்ணோட்டத்தை வழங்குகிறது. ஒவ்வொரு பகுதியும் மற்றவற்றைப் பயன் படுத்தி, தனிப்பட்ட மற்றும் சமூக வளர்ச்சிக்கு சமநிலையான அணுகுமுறையை உருவாக்குகிறது.'}
               </p>
             </div>
           </div>

@@ -8,9 +8,9 @@ const HeroSection = () => {
   const isEnglish = language === 'English';
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col md:flex-row bg-cover bg-center bg-fixed overflow-hidden" style={{ backgroundImage: 'url(/images/hero-bg.jpg)' }}>
-      {/* Background Overlay with Wheat Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#f9f2e7] via-[#f4e9d9] to-[#f0e6d6] opacity-90"></div>
+    <section className="relative w-full min-h-screen flex flex-col md:flex-row bg-cover bg-center bg-fixed overflow-hidden pt-20" style={{ backgroundImage: 'url(/images/hero-bg.jpg)' }}>
+      {/* Updated Background Overlay with White Gradient on Right */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#f9f2e7] via-[#f4e9d9] to-white opacity-90"></div>
       
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -23,7 +23,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 w-full h-full flex flex-col md:flex-row items-center md:items-start justify-center p-6 md:p-12 lg:p-20 pt-20"> {/* Added pt-20 to prevent overlap */}
+      <div className="relative z-10 w-full h-full flex flex-col md:flex-row items-center md:items-start justify-center p-6 md:p-12 lg:p-20">
         {/* Left Side - Text */}
         <div className="w-full md:w-1/2 flex flex-col items-center md:items-start justify-center text-center md:text-left mb-8 md:mb-0">
           {/* Hero Heading */}
@@ -59,7 +59,7 @@ const HeroSection = () => {
           </div>
 
           {/* Call to Action Buttons */}
-          <div className="flex flex-col space-y-4 mt-6 md:mt-8 lg:mt-10 w-full md:flex-row md:space-y-0 md:space-x-4"> {/* Stack buttons vertically on mobile */}
+          <div className="flex flex-col space-y-4 mt-6 md:mt-8 lg:mt-10 w-full md:flex-row md:space-y-0 md:space-x-4">
             <a
               href="#about"
               className="relative px-4 py-2 md:px-6 md:py-3 bg-green-700 hover:bg-green-800 text-white font-serif rounded-lg shadow-lg transition-transform duration-300 group text-center"
@@ -79,11 +79,11 @@ const HeroSection = () => {
 
         {/* Right Side - Image and Name */}
         <div className="w-full md:w-1/2 flex flex-col items-center justify-center text-center p-4">
-          {/* Image with Animation */}
+          {/* Image with Animation - Border Removed */}
           <motion.img
             src="/Images/thiruvalluvar.jpg"
             alt={isEnglish ? 'Illustration of Thirukkural wisdom' : 'திருக்குறள் ஞானத்தின் படம்ஒரு விளக்கம்'}
-            className="w-full max-w-md md:max-w-lg h-auto rounded-lg shadow-md object-cover mb-4 -mt-6 md:mt-[-40px] lg:mt-[-60px]"  // Adjusted margin-top to bring the image up
+            className="w-full max-w-md md:max-w-lg h-auto shadow-md object-cover mb-4 -mt-6 md:mt-[-40px] lg:mt-[-60px]"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
