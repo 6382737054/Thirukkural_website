@@ -23,6 +23,12 @@ const AboutSection = () => {
         { title: "Educational Impact", description: "Recognized for our impactful educational resources and tools that enhance understanding of Thirukkural's teachings." },
         { title: "Community Engagement", description: "Celebrated for engaging with communities and fostering cultural enrichment through interactive projects and events." },
       ],
+      testimonialsTitle: "What Our Community Says",
+      testimonials: [
+        { name: "Arun Kumar", feedback: "Thirukkural has deeply impacted my life, providing guidance in both personal and professional aspects." },
+        { name: "Lakshmi Priya", feedback: "The resources provided have made it easier to understand and apply the teachings of Thirukkural." },
+        { name: "Rajesh Kumar", feedback: "Engaging with the community has enriched my appreciation for Tamil literature." },
+      ],
     },
     Tamil: {
       title: "திருக்குறள் பற்றி",
@@ -33,6 +39,12 @@ const AboutSection = () => {
         { title: "பாரம்பரியத்தைப் பாதுகாப்பு", description: "தமிழ் இலக்கிய பாரம்பரியத்தை பாதுகாக்கவும், கல்வி முனைவுகளைப் பயன்படுத்து" },
         { title: "கல்வி தாக்கம்", description: "திருக்குறளின் கற்றல்களை மேம்படுத்துவதற்கான பாத்திரமான கல்வி வளங்கள் மற்றும் கருவிகள்" },
         { title: "சமூக ஈடுபாடு", description: "சமூகத்துடன் தொடர்பு கொள்ளும் மற்றும் கலாச்சார மேம்பாட்டை ஊக்குவிக்கும் இணைப்பான திட்டங்கள் மற்றும் நிகழ்வுகள்" },
+      ],
+      testimonialsTitle: "எங்கள் சமூகத்தின் கருத்துகள்",
+      testimonials: [
+        { name: "அருண் குமார்", feedback: "திருக்குறள் எனது வாழ்வில் ஆழமான தாக்கத்தை ஏற்படுத்தியுள்ளது, தனிப்பட்ட மற்றும் தொழில்முறை அடிப்படையில் வழிகாட்டி." },
+        { name: "லக்ஷ்மி பிரியா", feedback: "சொல்லப்பட்ட கல்வி வளங்கள், திருக்குறளின் கற்றல்களை எளிதாகப் புரிந்து கொள்ள உதவியுள்ளது." },
+        { name: "ராஜேஷ் குமார்", feedback: "சமூகத்துடன் தொடர்பு கொண்டது, தமிழ் இலக்கியத்தை மேலும் விரும்புவதற்கான வாய்ப்பு." },
       ],
     },
   };
@@ -54,7 +66,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="relative w-full py-20 bg-gray-100 overflow-hidden pt-32"> {/* Added padding-top for static navbar */}
+    <section className="relative w-full py-20 bg-gray-100 overflow-hidden pt-32">
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <svg className="absolute top-0 left-0 w-2/3 h-2/3 text-gray-200" viewBox="0 0 200 200" fill="none">
@@ -139,7 +151,7 @@ const AboutSection = () => {
           <DynamicQuote />
         </div>
 
-        {/* Achievements or Key Features */}
+        {/* Achievements Section */}
         <div className="mt-16">
           <motion.h3
             className="text-2xl md:text-3xl lg:text-4xl font-serif text-center text-gray-900 mb-12"
@@ -155,13 +167,41 @@ const AboutSection = () => {
             {sectionContent.keyAchievements.map((achievement, index) => (
               <motion.div
                 key={index}
-                className="relative p-8 bg-white rounded-xl shadow-xl hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105"
+                className="relative p-8 bg-gradient-to-r from-green-200 to-blue-200 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
               >
                 <h4 className="text-xl font-semibold text-gray-800 mb-2">{achievement.title}</h4>
                 <p className="text-gray-600">{achievement.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Testimonials Section */}
+        <div className="mt-16">
+          <motion.h3
+            className="text-2xl md:text-3xl lg:text-4xl font-serif text-center text-gray-900 mb-12"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            {sectionContent.testimonialsTitle}
+          </motion.h3>
+
+          {/* Testimonials Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {sectionContent.testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                className="relative p-8 bg-white rounded-xl border border-gray-300 shadow-lg transition duration-300 ease-in-out transform hover:shadow-2xl"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+              >
+                <p className="text-gray-600 italic mb-4">"{testimonial.feedback}"</p>
+                <h5 className="text-lg font-semibold text-gray-800">{testimonial.name}</h5>
               </motion.div>
             ))}
           </div>

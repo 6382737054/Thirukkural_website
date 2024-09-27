@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useLanguage } from '../context/LanguageContext'; // Import the language context
 
 const DynamicQuote = () => {
+  const { language } = useLanguage(); // Access the language from context
+
   const quotes = [
     { couplet: "அகர முதல எழுத்தெல்லாம் ஆதி பகவன் முதற்றே உலகு.", meaning: "A as its first of letters, every speech maintains; The first and loftiest God is source of this world’s frame." },
     { couplet: "வினை தவறா வினையுடையார் ஆகுபவை திணை தவறா வித்தும் தரும்.", meaning: "The deed, which men of firm resolves have meant, With execution just, to due fulfilment must be bent." },
@@ -14,7 +18,19 @@ const DynamicQuote = () => {
     { couplet: "கயல் என்ப கண்ணீ; அதற்கண் மன்னிக்கும் கண்ணீ.", meaning: "Beauty in eyes like a fish; for the love of the one who sees." },
   ];
 
-  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  const [randomQuote, setRandomQuote] = useState(quotes[0]);
+
+  useEffect(() => {
+    const getRandomQuote = () => {
+      const quote = quotes[Math.floor(Math.random() * quotes.length)];
+      setRandomQuote(quote);
+    };
+    getRandomQuote();
+    const interval = setInterval(getRandomQuote, 5000); // Change quote every 5 seconds
+    return () => clearInterval(interval);
+  }, []);
+
+  const title = language === 'Tamil' ? 'சீர்கொள் துறுக்குறள்' : 'Random Thirukkural Quote'; // Adjust the title based on language
 
   return (
     <section className="my-12 text-center">
@@ -24,7 +40,7 @@ const DynamicQuote = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <h4 className="text-xl font-bold text-teal-700">Random Thirukkural Quote</h4>
+        <h4 className="text-xl font-bold text-teal-700">{title}</h4>
         <p className="italic text-gray-800 mt-4">{randomQuote.couplet}</p>
         <p className="text-gray-600 mt-2">"{randomQuote.meaning}"</p>
       </motion.div>

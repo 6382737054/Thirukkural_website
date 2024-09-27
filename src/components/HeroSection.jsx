@@ -79,17 +79,17 @@ const HeroSection = () => {
 
         {/* Right Side - Image and Name */}
         <div className="w-full md:w-1/2 flex flex-col items-center justify-center text-center p-4">
-          {/* Image with Animation - Border Removed */}
+          {/* Image without Shadow or Border */}
           <motion.img
             src="/Images/thiruvalluvar.jpg"
             alt={isEnglish ? 'Illustration of Thirukkural wisdom' : 'திருக்குறள் ஞானத்தின் படம்ஒரு விளக்கம்'}
-            className="w-full max-w-md md:max-w-lg h-auto shadow-md object-cover mb-4 -mt-6 md:mt-[-40px] lg:mt-[-60px]"
+            className="w-full max-w-md md:max-w-lg h-auto object-cover mb-4 -mt-6 md:mt-[-40px] lg:mt-[-60px]" // Removed shadow and border classes
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           />
           {/* Name of the Person */}
-          <p className="text-lg md:text-xl font-serif font-semibold text-black-200">
+          <p className="text-lg md:text-xl font-serif font-semibold text-black-200 font-noto-sans-tamil">
             {isEnglish ? 'Thiruvalluvar' : 'திருவள்ளுவர்'}
           </p>
         </div>

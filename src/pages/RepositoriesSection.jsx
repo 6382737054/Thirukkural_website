@@ -141,11 +141,11 @@ const RepositoriesSection = () => {
   const facilities = facilityContent[language];
 
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gradient-to-r from-teal-100 to-white"> {/* Light gradient background for section */}
       {/* Introduction */}
       <section
         id="repositories-intro"
-        className="py-16 pt-32 bg-gradient-to-r from-teal-100 via-teal-0 to-teal-0 text-center" // Add pt-32 here
+        className="py-16 pt-32 text-center"
       >
         <div className="container mx-auto px-4">
           <h2 className="text-5xl font-extrabold mb-6 text-gray-900 tracking-tight transition-transform transform hover:scale-105">
@@ -171,7 +171,7 @@ const RepositoriesSection = () => {
             {repositories.map((repo) => (
               <div
                 key={repo.name}
-                className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl"
+                className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl duration-300" // Added transition duration
               >
                 <img
                   src={repo.image}
@@ -185,7 +185,7 @@ const RepositoriesSection = () => {
                     href={repo.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-500 transition"
+                    className="inline-block px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-500 transition duration-200"
                   >
                     {language === 'Tamil' ? 'மேலும் வாசிக்க' : 'Read More'}
                   </a>
@@ -207,9 +207,12 @@ const RepositoriesSection = () => {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {facilities.facilities.map((facility) => (
-              <div key={facility.title} className="bg-white rounded-lg shadow-lg p-6">
+              <div
+                key={facility.title}
+                className="bg-gradient-to-r from-teal-0 to-teal-200 rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105 hover:shadow-xl duration-300" // Light gradient background for facilities
+              >
                 <h3 className="text-2xl font-semibold mb-2 text-gray-800">{facility.title}</h3>
-                <p className="text-gray-600">{facility.description}</p>
+                <p className="text-gray-700">{facility.description}</p>
               </div>
             ))}
           </div>

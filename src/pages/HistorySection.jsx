@@ -5,7 +5,7 @@ import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 const HistorySection = () => {
   const { language } = useLanguage();
-  const isEnglish = language === 'English'; // Fixed the condition here
+  const isEnglish = language === 'English';
 
   const [expandedSection, setExpandedSection] = useState(null);
 
@@ -16,7 +16,7 @@ const HistorySection = () => {
   return (
     <section
       id="history-section"
-      className="pt-32 py-20 px-6 md:px-12 bg-gradient-to-r from-blue-50 to-green-50" // Added padding-top
+      className="pt-32 py-20 px-6 md:px-12 bg-gradient-to-r from-blue-50 to-green-50"
     >
       <div className="container mx-auto relative z-10">
         <motion.h1
@@ -52,11 +52,9 @@ const HistorySection = () => {
                       ? 'Aram, or virtue, is the first section of Thirukkural. It focuses on ethical and moral values that form the foundation of a righteous life. This section emphasizes the importance of virtues such as honesty, justice, and compassion in personal and social conduct.'
                       : 'அறம், அல்லது நல்லொழுக்கம், திருக்குறளின் முதல் பகுதியாகும். இது நெறிமுறை மற்றும் நீதி குறித்த அடிப்படைகளைப் பற்றியது, நல்ல வாழ்க்கையின் அடிப்படையாக உள்ளது. இந்தப் பகுதி, தனிப்பட்ட மற்றும் சமூக நடத்தைக்கு எவ்வளவு முக்கியம் என்பதைக் கூறுகிறது.'}
                   </p>
-                  <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                    {isEnglish
-                      ? 'The teachings of Aram guide individuals to lead a life filled with virtues, promoting harmony and righteousness in society.'
-                      : 'அறத்தின் கற்றல்களுக்கு, ஒரு நற்குணமான வாழ்க்கையை வாழ்வதற்கான வழிகாட்டுதல்களை வழங்குகிறது, சமுதாயத்தில் அமைதி மற்றும் நேர்மையை மேம்படுத்துகிறது.'}
-                  </p>
+                  <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-600 mb-4">
+                    {isEnglish ? '“Virtue is the foundation of a righteous life.”' : '“அறம், நல்ல வாழ்வின் அடித்தளமாகும்.”'}
+                  </blockquote>
                 </div>
               )}
             </motion.div>
@@ -83,11 +81,9 @@ const HistorySection = () => {
                       ? 'Porul, or wealth, is the second section of Thirukkural. It addresses the importance of acquiring and managing wealth, the principles of good governance, and the role of material success in contributing to a well-ordered society.'
                       : 'பொருள், அல்லது செல்வம், திருக்குறளின் இரண்டாவது பகுதியாகும். இது செல்வத்தைப் பெறுவதற்கும் மற்றும் நிர்வகிப்பதற்கும் முக்கியத்துவத்தை, நல்ல நிர்வாகத்தின் கொள்கைகளை, மற்றும் ஒழுங்கான சமுதாயத்திற்கு செல்வம் மிக்க பங்களிப்பு வகிக்கின்றது.'}
                   </p>
-                  <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                    {isEnglish
-                      ? 'Porul emphasizes the significance of wealth in achieving societal stability and prosperity, guiding leaders and citizens alike in managing resources effectively.'
-                      : 'பொருள், சமூக நிலைத்தன்மை மற்றும் நன்மையை அடைய செல்வத்தின் முக்கியத்துவத்தை வலியுறுத்துகிறது, தலைவர்களும் குடிமக்களும் வளங்களை திறம்பட நிர்வகிக்க வழிகாட்டுகிறது.'}
-                  </p>
+                  <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-600 mb-4">
+                    {isEnglish ? '“Wealth must be managed wisely for a prosperous society.”' : '“செல்வம், செழிப்பான சமுதாயத்திற்காக அறிந்த முறையில் நிர்வகிக்கப்பட வேண்டும்.”'}
+                  </blockquote>
                 </div>
               )}
             </motion.div>
@@ -114,29 +110,44 @@ const HistorySection = () => {
                       ? 'Inbam, or love, is the third section of Thirukkural. It explores the nature of love and relationships, highlighting the joys and challenges of romantic and familial bonds. This section reflects on the emotional and psychological aspects of love.'
                       : 'இன்பம், அல்லது காதல், திருக்குறளின் மூன்றாவது பகுதியாகும். இது காதலின் மற்றும் உறவுகளின் இயல்புகளை ஆராய்கிறது, காதல் மற்றும் குடும்ப உறவின் மகிழ்ச்சிகள் மற்றும் சவால்களை முன்னிறுத்துகிறது. இந்தப் பகுதி, காதலின் உளவியல் மற்றும் உளவியல் அம்சங்களை பிரதிபலிக்கிறது.'}
                   </p>
-                  <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                    {isEnglish
-                      ? 'The exploration of love in Inbam teaches about the dynamics of human relationships and provides insights into the emotional depth and complexities of affection.'
-                      : 'இன்பத்தில் காதலின் ஆராய்ச்சி, மனித உறவுகளின் மாற்றங்களைப் பற்றிய கற்றலையும், அன்பின் உளவியல் ஆழத்தையும் மற்றும் சிக்கல்களைப் பற்றிய கருத்துக்களை வழங்குகிறது.'}
-                  </p>
+                  <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-600 mb-4">
+                    {isEnglish ? '“Love is the essence of human connection.”' : '“காதல், மனித உறவுகளின் அடிப்படையாகும்.”'}
+                  </blockquote>
                 </div>
               )}
             </motion.div>
           </div>
 
           {/* Right Side Enhancements */}
-          <div className="w-full md:w-1/3 flex flex-col gap-8">
-            <div className="bg-gray-100 p-8 rounded-xl shadow-lg">
+          <motion.div 
+            className="w-full md:w-1/3 flex flex-col gap-8"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <motion.div
+              className="bg-gradient-to-r from-green-100 to-blue-100 p-8 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105"
+            >
               <h3 className="text-2xl font-semibold mb-4 text-gray-800">
                 {isEnglish ? 'Key Insights' : 'முக்கிய உண்மைகள்'}
               </h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed mb-4">
                 {isEnglish
                   ? 'Thirukkural presents a holistic view of life through the lenses of virtue, wealth, and love. Each section complements the others, creating a balanced approach to personal and societal development.'
-                  : 'திருக்குறள், நல்லொழுக்கம், செல்வம் மற்றும் காதலின் கண்ணோட்டத்தில் வாழ்க்கையின் முழுமையான கண்ணோட்டத்தை வழங்குகிறது. ஒவ்வொரு பகுதியும் மற்றவற்றைப் பயன் படுத்தி, தனிப்பட்ட மற்றும் சமூக வளர்ச்சிக்கு சமநிலையான அணுகுமுறையை உருவாக்குகிறது.'}
+                  : 'திருக்குறள், அறம், பொருள் மற்றும் இன்பத்தின் மூலம் வாழ்க்கையின் முழுமையான கண்ணோட்டத்தை வழங்குகிறது. ஒவ்வொரு பகுதியும் மற்றவற்றைப் பூர்த்தி செய்கிறது, தனிப்பட்ட மற்றும் சமூக வளர்ச்சிக்கான சமநிலையான அணுகுமுறை உருவாக்குகிறது.'}
               </p>
-            </div>
-          </div>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                {isEnglish
+                  ? 'The teachings of Thirukkural encourage ethical living, responsible governance, and meaningful relationships, making it a timeless guide for all.'
+                  : 'திருக்குறளின் கற்றல்கள், நெறிமுறை வாழ்க்கை, பொறுப்பான நிர்வாகம் மற்றும் முக்கியமான உறவுகளை ஊக்குவிக்கிறது, இது எல்லாருக்கும் காலகட்டத்திற்கேற்ப வழிகாட்டியாக இருக்கிறது.'}
+              </p>
+              <ul className="list-disc list-inside text-gray-700">
+                <li>- Emphasis on virtues</li>
+                <li>- Importance of wealth and governance</li>
+                <li>- Exploration of love and relationships</li>
+              </ul>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -27,7 +27,7 @@ const SignificanceSection = () => {
   };
 
   return (
-    <div className="bg-[#e5e4cd] py-16 pt-32"> {/* Updated background color and added padding */}
+    <div className="bg-gradient-to-b from-[#fae2b7] to-[#faf9f6] py-16 pt-32"> {/* Updated background color */}
       <div className="container mx-auto px-4">
         {/* Heading */}
         <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
@@ -36,23 +36,34 @@ const SignificanceSection = () => {
 
         {/* Content */}
         <div className="flex flex-col lg:flex-row gap-12">
-          {/* Left Column: Text Content */}
+          {/* Left Column: Unique Text Display */}
           <div className="flex-1">
-            <p className="text-lg text-gray-800 mb-6">
-              {language === 'Tamil'
-                ? 'திருக்குறள் தமிழ் இலக்கியத்தின் அடித்தளம் ஆகும். திருக்குறளில் காணப்படும் கருத்துகள், பயன்மிக்க அறிவு மற்றும் வாழ்வியல் தத்துவங்கள் பொதுமக்களுக்கு மிகுந்த பயனுள்ளவையாகும். இது அன்றைய சமூகத்தின் உள் மற்றும் வெளிுறவு கருத்துகளை வலுப்படுத்துகிறது.'
-                : 'The Thirukkural is a cornerstone of Tamil literature. The concepts, practical wisdom, and philosophical insights contained in the Thirukkural provide significant value to the public. It strengthens both the internal and external reflections of society.'}
-            </p>
-            <p className="text-lg text-gray-800 mb-6">
-              {language === 'Tamil'
-                ? 'தற்காலத்திலும் தத்துவப் பரிமாணங்கள் மற்றும் சமூக நியாயங்களை பற்றிய அவரது ஆழமான கவனிப்புகள், முறைமை மற்றும் படிப்பு நுணுக்கங்களை வளர்க்க உதவுகிறது.'
-                : 'Its timeless observations on philosophical dimensions and social justice continue to aid in the development of systematic and nuanced studies.'}
-            </p>
-            <p className="text-lg text-gray-800">
-              {language === 'Tamil'
-                ? 'இது, கவிஞர்களுக்கும், சிந்தனையர்களுக்கும், மற்றும் சமூக ஆர்வலர்களுக்கும் ஒரு முறை வகை ஆகும். இது பயனுள்ள அறிவின் அடிப்படையாகவும், தத்துவ அறியாமை மற்றும் நன்மை குறித்த வரலாற்றுப் புரிதலாகவும் அமைந்துள்ளது.'
-                : 'It serves as a model for poets, philosophers, and social enthusiasts. It stands as a foundation for useful knowledge and historical understanding regarding philosophical ignorance and virtue.'}
-            </p>
+            <div className="bg-white p-8 rounded-lg shadow-lg text-gray-800 relative">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                {language === 'Tamil' ? 'முக்கியத்துவம்' : 'Importance'}
+              </h3>
+              <div className="border-l-4 border-yellow-500 pl-4 mb-6">
+                <p className="text-lg">
+                  {language === 'Tamil'
+                    ? 'திருக்குறள் தமிழ் இலக்கியத்தின் அடித்தளம் ஆகும். திருக்குறளில் காணப்படும் கருத்துகள், பயன்மிக்க அறிவு மற்றும் வாழ்வியல் தத்துவங்கள் பொதுமக்களுக்கு மிகுந்த பயனுள்ளவையாகும். இது அன்றைய சமூகத்தின் உள் மற்றும் வெளிுறவு கருத்துகளை வலுப்படுத்துகிறது.'
+                    : 'The Thirukkural is a cornerstone of Tamil literature. The concepts, practical wisdom, and philosophical insights contained in the Thirukkural provide significant value to the public. It strengthens both the internal and external reflections of society.'}
+                </p>
+              </div>
+              <div className="border-l-4 border-yellow-500 pl-4 mb-6">
+                <p className="text-lg">
+                  {language === 'Tamil'
+                    ? 'தற்காலத்திலும் தத்துவப் பரிமாணங்கள் மற்றும் சமூக நியாயங்களை பற்றிய அவரது ஆழமான கவனிப்புகள், முறைமை மற்றும் படிப்பு நுணுக்கங்களை வளர்க்க உதவுகிறது.'
+                    : 'Its timeless observations on philosophical dimensions and social justice continue to aid in the development of systematic and nuanced studies.'}
+                </p>
+              </div>
+              <div className="border-l-4 border-yellow-500 pl-4">
+                <p className="text-lg">
+                  {language === 'Tamil'
+                    ? 'இது, கவிஞர்களுக்கும், சிந்தனையர்களுக்கும், மற்றும் சமூக ஆர்வலர்களுக்கும் ஒரு முறை வகை ஆகும். இது பயனுள்ள அறிவின் அடிப்படையாகவும், தத்துவ அறியாமை மற்றும் நன்மை குறித்த வரலாற்றுப் புரிதலாகவும் அமைந்துள்ளது.'
+                    : 'It serves as a model for poets, philosophers, and social enthusiasts. It stands as a foundation for useful knowledge and historical understanding regarding philosophical ignorance and virtue.'}
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Right Column: Interactive Elements */}
