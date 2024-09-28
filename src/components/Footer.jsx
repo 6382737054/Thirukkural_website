@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -13,13 +14,28 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Services Section */}
+          {/* Navigation Links (similar to Header) */}
           <div className="mb-6 md:mb-0">
-            <h3 className="text-xl font-bold mb-2">Services</h3>
+            <h3 className="text-xl font-bold mb-2">Quick Links</h3>
             <ul className="text-sm space-y-1">
-              <li><a href="/service1" className="hover:underline">Service 1</a></li>
-              <li><a href="/service2" className="hover:underline">Service 2</a></li>
-              <li><a href="/service3" className="hover:underline">Service 3</a></li>
+              <li>
+                <NavLink to="/" className={({ isActive }) => `hover:underline ${isActive ? 'text-blue-500' : ''}`}>Home</NavLink>
+              </li>
+              <li>
+                <NavLink to="/about" className={({ isActive }) => `hover:underline ${isActive ? 'text-blue-500' : ''}`}>About</NavLink>
+              </li>
+              <li>
+                <NavLink to="/history" className={({ isActive }) => `hover:underline ${isActive ? 'text-blue-500' : ''}`}>History</NavLink>
+              </li>
+              <li>
+                <NavLink to="/chapters" className={({ isActive }) => `hover:underline ${isActive ? 'text-blue-500' : ''}`}>Chapters</NavLink>
+              </li>
+              <li>
+                <NavLink to="/features" className={({ isActive }) => `hover:underline ${isActive ? 'text-blue-500' : ''}`}>Features</NavLink>
+              </li>
+              <li>
+                <NavLink to="/contact" className={({ isActive }) => `hover:underline ${isActive ? 'text-blue-500' : ''}`}>Contact</NavLink>
+              </li>
             </ul>
           </div>
 
@@ -33,7 +49,7 @@ const Footer = () => {
           {/* Social Media Section */}
           <div>
             <h3 className="text-xl font-bold mb-2">Follow Us</h3>
-            <div className="flex space-x-4">
+            <div className="flex flex-col space-y-2">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:underline">
                 Facebook
               </a>
