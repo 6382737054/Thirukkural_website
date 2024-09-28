@@ -39,7 +39,7 @@ const ContactPage = () => {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 flex justify-center items-center min-h-screen px-4 mt-16"> {/* Adjusted mt-16 to bring the container down */}
+      <div className="relative z-10 flex justify-center items-center min-h-screen px-4 mt-16">
         <div className="bg-white shadow-lg rounded-lg overflow-hidden max-w-4xl w-full">
           <div className="flex flex-col md:flex-row">
             {/* Contact Details */}
@@ -65,16 +65,16 @@ const ContactPage = () => {
                 <input
                   type="text"
                   placeholder={t.enterName}
-                  className="w-full px-3 py-2 border border-gray-300 rounded text-sm"
+                  className="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring focus:ring-indigo-500"
                 />
                 <input
                   type="email"
                   placeholder={t.enterEmail}
-                  className="w-full px-3 py-2 border border-gray-300 rounded text-sm"
+                  className="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring focus:ring-indigo-500"
                 />
                 <textarea
                   placeholder={t.enterMessage}
-                  className="w-full px-3 py-2 border border-gray-300 rounded text-sm"
+                  className="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring focus:ring-indigo-500"
                   rows="3"
                 ></textarea>
                 <button
