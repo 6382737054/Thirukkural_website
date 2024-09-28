@@ -11,7 +11,7 @@ import ContactPage from './pages/ContactPage'; // Import the ContactPage compone
 import { LanguageProvider } from './context/LanguageContext';
 import FlipBook from './pages/VersesOfWisdom';
 import VersesSection from './pages/VersesSection';
-
+import Footer from './components/Footer'; // Import the Footer component
 
 function App() {
   return (
@@ -24,9 +24,8 @@ function App() {
             element={
               <div>
                 <HeroSection />
-               <FlipBook/>
-               <VersesSection/>
-               
+                <FlipBook />
+                <VersesSection />
               </div>
             }
           />
@@ -37,6 +36,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} /> {/* Contact Page route */}
           {/* Add other routes here as needed */}
         </Routes>
+        <Footer /> {/* Add the Footer here */}
       </LanguageProvider>
     </Router>
   );
