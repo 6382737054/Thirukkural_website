@@ -44,7 +44,7 @@ const Header = () => {
           {/* Logo and Title */}
           <div className="flex items-center space-x-2"> {/* Added space-x-2 for spacing */}
             <NavLink to="/" className="hover:scale-105 transition-transform duration-300">
-            <img src="/Images/TamilNadu_logo.png" alt="Logo" className="h-12 md:h-14" />
+            <img src="/Images/TamilNadu_oLgo.png" alt="Logo" className="h-12 md:h-14" />
 
             </NavLink>
             <span className="text-xl font-extrabold">{thirukkuralText}</span> {/* Made the text even bolder */}
