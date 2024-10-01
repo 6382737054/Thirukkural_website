@@ -15,7 +15,7 @@ const repositoryData = {
       name: 'தமிழ் இணைய பல்கலைக்கழக நூலகம்',
       url: 'https://www.tamilvu.org/',
       description:
-        'தமிழ்நாட்டில் உள்ள ஒரு டிஜிட்டல் நூலகம், தமிழ் இலக்கிய வேலைகளுக்கு மற்றும் ஆராய்ச்சி படைப்புகளுக்கு அணுகலை வழங்குகிறது.',
+        'தமிழ்நாட்டில் உள்ள ஒரு டிஜிட்டல் நூலகம், தமிழ் இலக்கிய வேலைகளை மற்றும் ஆராய்ச்சி படைப்புகளுக்கு அணுகலை வழங்குகிறது.',
       image: '/Images/tamil-virtual-university.jpg',
     },
     {
@@ -31,6 +31,13 @@ const repositoryData = {
       description:
         'தமிழ்நாட்டின் மாநில நூலகம், இலக்கிய வேலைகள் மற்றும் வரலாற்றுப் ஆவணங்களை டிஜிட்டல் மாற்றியிருப்பது.',
       image: '/Images/tamil-nadu-state-library.jpg',
+    },
+    {
+      name: 'தமிழ் பல்கலைக்கழகம்',
+      url: 'https://www.tamiluniversity.ac.in/',
+      description:
+        'தமிழ் இலக்கியத்தின் பல்வேறு கோணங்களில் ஆராய்ச்சி மற்றும் கல்வி வழங்கும் பேராசிரியர் நிலையம்.',
+      image: '/Images/tamil-university.jpg', // Ensure you have an image for this entry
     },
   ],
   English: [
@@ -61,6 +68,13 @@ const repositoryData = {
       description:
         'The state library of Tamil Nadu with digitized resources, including literary works and historical documents related to the Thirukkural.',
       image: '/Images/tamil-nadu-state-library.jpg',
+    },
+    {
+      name: 'Tamil University',
+      url: 'https://www.tamiluniversity.ac.in/',
+      description:
+        'A center for research and education in various aspects of Tamil literature.',
+      image: '/Images/tamil-university.jpg', // Ensure you have an image for this entry
     },
   ],
 };
@@ -168,26 +182,28 @@ const RepositoriesSection = () => {
             {language === 'Tamil' ? 'பொதுவான பதிவுகள்' : 'Notable Repositories'}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {repositories.map((repo) => (
+            {repositories.map((repo, index) => (
               <div
-                key={repo.name}
-                className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl duration-300" // Added transition duration
+                key={index}
+                className="bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105"
               >
                 <img
                   src={repo.image}
                   alt={repo.name}
-                  className="w-full h-48 object-cover rounded-t-lg"
+                  className="w-full h-48 object-cover"
                 />
-                <div className="p-6">
-                  <h3 className="text-2xl font-semibold mb-2 text-gray-800">{repo.name}</h3>
+                <div className="p-4">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                    {repo.name}
+                  </h3>
                   <p className="text-gray-600 mb-4">{repo.description}</p>
                   <a
                     href={repo.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-500 transition duration-200"
+                    className="inline-block px-4 py-2 bg-teal-500 text-white font-semibold rounded-md hover:bg-teal-600 transition duration-200"
                   >
-                    {language === 'Tamil' ? 'மேலும் வாசிக்க' : 'Read More'}
+                    Read More
                   </a>
                 </div>
               </div>
@@ -196,23 +212,25 @@ const RepositoriesSection = () => {
         </div>
       </section>
 
-      {/* Facilities Information */}
-      <section id="facilities" className="py-16 bg-gray-50">
+      {/* Facilities Section */}
+      <section id="repositories-facilities" className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-10 text-gray-900 text-center">
             {facilities.heading}
           </h2>
-          <p className="text-lg text-gray-700 mb-6 text-center">
+          <p className="text-lg text-gray-700 mb-8 text-center">
             {facilities.description}
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {facilities.facilities.map((facility) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {facilities.facilities.map((facility, index) => (
               <div
-                key={facility.title}
-                className="bg-gradient-to-r from-teal-0 to-teal-200 rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105 hover:shadow-xl duration-300" // Light gradient background for facilities
+                key={index}
+                className="bg-white rounded-lg shadow-md p-4 transition-transform transform hover:scale-105"
               >
-                <h3 className="text-2xl font-semibold mb-2 text-gray-800">{facility.title}</h3>
-                <p className="text-gray-700">{facility.description}</p>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  {facility.title}
+                </h3>
+                <p className="text-gray-600">{facility.description}</p>
               </div>
             ))}
           </div>

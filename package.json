@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "@fontsource/merriweather": "^5.0.15",
-    "@fontsource/playfair-display": "^5.0.26",
+    "@fontsource/noto-sans-tamil": "^5.1.0",
+    "@fontsource/playfair-display": "^5.1.0",
+    "@fontsource/roboto": "^5.1.0",
     "@react-pdf/renderer": "^4.0.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

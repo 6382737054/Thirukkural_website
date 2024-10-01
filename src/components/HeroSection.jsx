@@ -1,7 +1,9 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'framer-motion';
-import '@fontsource/playfair-display'; // Ensure this package is installed
+import '@fontsource/roboto'; // For a professional English font
+
+import '@fontsource/noto-sans-tamil'; // Improved Tamil font
 
 const HeroSection = () => {
   const { language } = useLanguage();
@@ -9,14 +11,14 @@ const HeroSection = () => {
 
   return (
     <section className="relative w-full min-h-screen flex flex-col md:flex-row bg-cover bg-center bg-fixed overflow-hidden pt-20" style={{ backgroundImage: 'url(/images/hero-bg.jpg)' }}>
-      {/* Updated Background Overlay with White Gradient on Right */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#f9f2e7] via-[#f4e9d9] to-white opacity-90"></div>
-      
+      {/* Background Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#283E51] via-[#4B79A1] to-[#BCB5D4] opacity-80"></div> {/* Updated colors */}
+
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-opacity-20 bg-gradient-to-r from-[#ffffff] via-[#f4e9d9] to-[#f0e6d6]"></div>
+        <div className="absolute inset-0 bg-opacity-20 bg-gradient-to-r from-[#ffffff] via-[#f0f4ff] to-[#d9e8ff]"></div>
         <div className="absolute inset-0 flex items-center justify-center">
-          <svg className="absolute top-0 left-0 w-32 h-32 text-[#f4e9d9]" viewBox="0 0 200 200" fill="none">
+          <svg className="absolute top-0 left-0 w-32 h-32 text-[#e0f7fa]" viewBox="0 0 200 200" fill="none">
             <circle cx="100" cy="100" r="100" stroke="currentColor" strokeWidth="30" opacity="0.2" />
           </svg>
         </div>
@@ -28,7 +30,11 @@ const HeroSection = () => {
         <div className="w-full md:w-1/2 flex flex-col items-center md:items-start justify-center text-center md:text-left mb-8 md:mb-0">
           {/* Hero Heading */}
           <motion.h1
-            className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-serif text-black-300 mb-4 md:mb-6 relative"
+            className={`${
+              isEnglish
+                ? 'text-2xl md:text-4xl lg:text-5xl xl:text-6xl'
+                : 'text-xl md:text-3xl lg:text-4xl xl:text-5xl'
+            } font-roboto text-black-300 mb-4 md:mb-6 relative`}
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -41,7 +47,11 @@ const HeroSection = () => {
 
           {/* Hero Description */}
           <motion.p
-            className="text-base md:text-lg lg:text-xl xl:text-2xl text-black-200 mb-6 md:mb-8 relative"
+            className={`${
+              isEnglish
+                ? 'text-base md:text-lg lg:text-xl xl:text-2xl'
+                : 'text-sm md:text-base lg:text-lg xl:text-xl'
+            } font-roboto text-black-200 mb-6 md:mb-8 relative`}
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
@@ -62,14 +72,14 @@ const HeroSection = () => {
           <div className="flex flex-col space-y-4 mt-6 md:mt-8 lg:mt-10 w-full md:flex-row md:space-y-0 md:space-x-4">
             <a
               href="#about"
-              className="relative px-4 py-2 md:px-6 md:py-3 bg-green-700 hover:bg-green-800 text-white font-serif rounded-lg shadow-lg transition-transform duration-300 group text-center"
+              className="relative px-4 py-2 md:px-6 md:py-3 bg-green-700 hover:bg-green-800 text-white font-roboto rounded-lg shadow-lg transition-transform duration-300 group text-center"
             >
               <span className="absolute inset-0 bg-green-800 rounded-lg transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
               {isEnglish ? 'Learn More' : 'மேலும் அறியவும்'}
             </a>
             <a
               href="#get-started"
-              className="relative px-4 py-2 md:px-6 md:py-3 bg-yellow-700 hover:bg-yellow-800 text-white font-serif rounded-lg shadow-lg transition-transform duration-300 group text-center"
+              className="relative px-4 py-2 md:px-6 md:py-3 bg-yellow-700 hover:bg-yellow-800 text-white font-roboto rounded-lg shadow-lg transition-transform duration-300 group text-center"
             >
               <span className="absolute inset-0 bg-yellow-800 rounded-lg transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
               {isEnglish ? 'Get Started' : 'தொடங்குங்கள்'}
@@ -89,7 +99,9 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
           />
           {/* Name of the Person */}
-          <p className="text-lg md:text-xl font-serif font-semibold text-black-200 font-noto-sans-tamil">
+          <p className={`${
+              isEnglish ? 'text-lg md:text-xl' : 'text-base md:text-lg'
+            } font-roboto font-semibold text-black-200`}>
             {isEnglish ? 'Thiruvalluvar' : 'திருவள்ளுவர்'}
           </p>
         </div>
